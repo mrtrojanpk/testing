@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog</title>
+
+
+    <!-- ========================================================================================================= -->
+    <!-- ==================================The global css code=============================================== -->
+
+
+    <style type="text/css">
+         body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: rgb(32, 300, 0);
+        }
+        #toggleButton {
+            position: fixed;
+            bottom: 35px;
+            right: 35px;
+            font-size: 35px;
+            background-color:black;
+            border: 3px solid rgb(32, 200, 0);
+            color: rgb(32, 200, 0);
+            border-radius: 50%;
+            cursor: pointer;
+            width: 60px;
+            height: 60px;
+        }
+        /* Add some basic styling */
+    .textarea-containeronea {
+      display: none;
+      position: fixed;
+      top: 10px;
+      left: auto;
+      right: auto;
+      width: 100%;
+      justify-content: center;
+    }
+    textarea{
+      width: 60%;
+      height: 30px; /* Set a minimum height for one line of text */
+      overflow: hidden;
+      transition: height 0.3s;
+      resize: none;
+      background: black;
+      border: 3px solid rgb(32, 200, 0);
+      color: rgb(32, 200, 0);
+      font-size: 20px;
+      border-radius: 5px;
+      margin-top: 40px;
+      justify-content: center;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    textarea:focus {
+        border: 3px solid rgb(32, 200, 0);
+        outline: none;
+    }
+    #popupone {
+            display: none;
+            width: 250px;
+            height: 180px;
+            position: fixed;
+            padding: 10px;
+            border: 3px solid green;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        #popupone.show {
+            display: block;
+        } 
+    </style>
+
+    <!-- =========================================== The global css ended =================================== -->
+    <!-- ========================================Local code started=========================================== -->
+<style>
+   
+
+    #one {
+      display: grid;
+      grid-template-columns: repeat(3, 70px);
+      grid-template-rows: repeat(3, 35px);
+      gap: 5px;
+      justify-content: center;
+      align-items: flex-start;
+      background-color: black;
+      border: none;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .buttonone {
+      width: 70px;
+      height: 35px;
+      text-align: center;
+      line-height: 35px;
+      background-color: #4CAF50;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+
+
+    /*.textareaonea {
+      width: 300px;
+      height: 150px;
+    }*/
+    
+  </style>
+
+
+
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===========================================  HTML ================================================-->
+<!-- ================================================================================================== -->
+
+    <button id="toggleButton" onclick="togglePopup()">+</button>
+
+    <div id="popupone">
+
+
+<div id="one" class="one">
+  <button id="buttononea" class="buttonone" onclick="toggleTextarea()">A</button>
+  <button id="buttononeb" class="buttonone">B</button>
+  <button id="buttononec" class="buttonone">C</button>
+  <button id="buttononed" class="buttonone">D</button>
+  <button id="buttononee" class="buttonone">E</button>
+  <button id="buttononef" class="buttonone">F</button>
+  <button id="buttononeg" class="buttonone">G</button>
+  <button id="buttononeh" class="buttonone">H</button>
+  <button id="buttononei" class="buttonone">I</button>
+  <button id="buttononej" class="buttonone">J</button>
+</div>
+
+    </div>
+
+
+<!-- code for textareas -->
+
+<div class="textarea-containeronea"><textarea id="textareaonea" class="textareaonea"></textarea></div>
+
+
+
+
+
+
+
+<script>
+ // JavaScript to toggle the visibility of the textarea
+  function toggleTextarea() {
+    var textareaContainer = document.querySelector('.textarea-containeronea');
+    textareaContainer.style.display = (textareaContainer.style.display === 'none' || textareaContainer.style.display === '') ? 'block' : 'block';
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ================================ Yellow Color ==================================== -->
+
+<!-- <h1 style=" color: black; background-color: rgb(255, 255, 0); width: 100px; height: 40px; border: 2px solid white; padding: 10px; ">Jibran</h1> -->
+
+<!-- ================================ Red Color ==================================== -->
+
+<!-- <h1 style=" color: black; background-color: rgb(255, 60, 0); width: 100px; height: 40px; border: 2px solid white; padding: 10px; ">Jibran</h1> -->
+
+<!-- ================================  Sky Blue Color ==================================== -->
+
+ <!-- <h1 style=" color: rgb(0, 204, 204); background-color: black; width: 100px; height: 40px; border: 2px solid white; padding: 10px; ">Jibran</h1>  -->
+
+
+<!-- ================================  Light Green Color ==================================== -->
+
+ <!-- <h1 style=" color: rgb(0, 255, 0); background-color: black; width: 100px; height: 40px; border: 2px solid white; padding: 10px; ">Jibran</h1>  -->
+
+
+
+<!-- ======================================== The Global code ================================================ -->
+<!-- ========================================================================================================= -->
+
+
+<!-- script for + button -->
+    <script>
+         function togglePopup() {
+            var popup = document.getElementById('popupone');
+            popup.classList.toggle('show');
+        }
+
+        // Hide popup when clicking outside of it
+        document.addEventListener('click', function (event) {
+            var popup = document.getElementById('popupone');
+            var toggleButton = document.getElementById('toggleButton');
+            
+            if (!popup.contains(event.target) && event.target !== toggleButton) {
+                popup.classList.remove('show');
+            }
+        });
+    </script>
+
+<!-- =The global js code for textarea= -->
+
+<script>
+  const textareas = document.querySelectorAll('textarea');
+
+  textareas.forEach(textarea => {
+    let previousScrollHeight = textarea.scrollHeight;
+
+    textarea.addEventListener('input', function () {
+      const lines = this.value.split('\n').length;
+      
+      // Check if the textarea is empty
+      if (this.value.trim() === '') {
+        this.style.transition = 'height 0.3s';
+        this.style.height = '30px'; // Set to the default height
+      } else if (this.scrollHeight === previousScrollHeight) {
+        this.style.transition = 'height 0.3s'; // Add a smooth transition
+        this.style.height = `${30 + (lines * 20)}px`;
+        previousScrollHeight = this.scrollHeight;
+      }
+    });
+
+    textarea.addEventListener('scroll', function () {
+      if (this.scrollHeight > this.clientHeight) {
+        this.style.transition = 'height 0.3s'; // Add a smooth transition
+        this.style.height = `${this.scrollHeight}px`;
+      }
+    });
+
+    textarea.addEventListener('keydown', function (e) {
+      if (e.key === "Backspace") {
+        const lines = this.value.split('\n').length;
+
+        // Check if a line is removed by the user
+        if (lines < this.value.split('\n').length) {
+          this.style.transition = 'height 0.3s'; // Add a smooth transition
+          this.style.height = `${parseInt(this.style.height) - 20}px`; // Decrease by 20px
+        }
+      }
+    });
+  });
+</script>
+
+<!-- global js code for fetching data from details.txt -->
+
+<script>
+        // Function to fetch and parse details.txt
+        async function fetchDetails() {
+            try {
+                const response = await fetch('details.txt');
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch details.txt: ${response.statusText}`);
+                }
+
+                const data = await response.text();
+                const details = {};
+
+                // Parse details.txt content into an object
+                data.split('\n').forEach(line => {
+                    const [key, value] = line.split(':').map(item => item.trim());
+                    details[key] = value;
+                });
+
+                // Replace placeholders in HTML and CSS
+                replacePlaceholders(details);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        // Function to replace placeholders in HTML and CSS
+        function replacePlaceholders(details) {
+            // Replace placeholders in HTML
+            document.body.innerHTML = document.body.innerHTML.replace(/\$([a-zA-Z]+)/g, (match, p1) => {
+                return details[p1.trim()] || match;
+            });
+
+            // Replace placeholders in CSS
+            const dynamicStyles = document.getElementById('dynamicStyles');
+            dynamicStyles.textContent = `
+                .example {
+                    color: ${details['lg']};
+                }
+                /* Add more CSS rules as needed */
+            `;
+        }
+
+        // Call the function to fetch and replace details
+        fetchDetails();
+    </script> 
+
+
+
+
+
+<!-- ========================================Textarea global setting js ended ============================== -->
+
+
+</body>
+</html>
