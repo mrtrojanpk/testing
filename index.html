@@ -114,7 +114,6 @@
     }
 
 
-
     /*.textareaonea {
       width: 300px;
       height: 150px;
@@ -127,10 +126,6 @@
 
 </head>
 <body>
-
-
-
-
 
 
 
@@ -195,11 +190,15 @@
 
 
 <script>
- // JavaScript to toggle the visibility of the textarea
+ // JavaScript to toggle the visibility of the textarea and hide popupone
   function toggleTextarea() {
     var textareaContainer = document.querySelector('.textarea-containeronea');
-    textareaContainer.style.display = (textareaContainer.style.display === 'none' || textareaContainer.style.display === '') ? 'block' : 'block';
+    var popupOne = document.getElementById('popupone');
+
+    textareaContainer.style.display = (textareaContainer.style.display === 'none' || textareaContainer.style.display === '') ? 'block' : 'none';
+    popupOne.style.display = 'none';
   }
+  
 </script>
 
 
@@ -305,51 +304,7 @@
 
 <!-- global js code for fetching data from details.txt -->
 
-<script>
-        // Function to fetch and parse details.txt
-        async function fetchDetails() {
-            try {
-                const response = await fetch('details.txt');
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch details.txt: ${response.statusText}`);
-                }
-
-                const data = await response.text();
-                const details = {};
-
-                // Parse details.txt content into an object
-                data.split('\n').forEach(line => {
-                    const [key, value] = line.split(':').map(item => item.trim());
-                    details[key] = value;
-                });
-
-                // Replace placeholders in HTML and CSS
-                replacePlaceholders(details);
-            } catch (error) {
-                console.error(error);
-            }
-        }
-
-        // Function to replace placeholders in HTML and CSS
-        function replacePlaceholders(details) {
-            // Replace placeholders in HTML
-            document.body.innerHTML = document.body.innerHTML.replace(/\$([a-zA-Z]+)/g, (match, p1) => {
-                return details[p1.trim()] || match;
-            });
-
-            // Replace placeholders in CSS
-            const dynamicStyles = document.getElementById('dynamicStyles');
-            dynamicStyles.textContent = `
-                .example {
-                    color: ${details['lg']};
-                }
-                /* Add more CSS rules as needed */
-            `;
-        }
-
-        // Call the function to fetch and replace details
-        fetchDetails();
-    </script> 
+<script src="./details.js"></script>
 
 
 
