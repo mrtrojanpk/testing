@@ -4,22 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Blog</title>
-
-
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+</style>
     <!-- ========================================================================================================= -->
     <!-- ==================================The global css code=============================================== -->
 
 
     <style type="text/css">
+
          body {
-            width: 100%;
-            margin: 0;
-            padding: 0;
+            font-family: 'Quicksand';
             background-color: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            height: 100%;
             color: rgb(32, 300, 0);
         }
         #toggleButton {
@@ -28,8 +25,8 @@
             right: 35px;
             font-size: 35px;
             background-color:black;
-            border: 3px solid rgb(32, 200, 0);
-            color: rgb(32, 200, 0);
+            border: 3px solid rgb(32, 300, 0);
+            color: rgb(32, 300, 0);
             border-radius: 50%;
             cursor: pointer;
             width: 60px;
@@ -38,7 +35,7 @@
         /* Add some basic styling */
     .textarea-containeronea {
       display: none;
-      position: fixed;
+      position: relative;
       top: 10px;
       left: auto;
       right: auto;
@@ -52,8 +49,8 @@
       transition: height 0.3s;
       resize: none;
       background: black;
-      border: 3px solid rgb(32, 200, 0);
-      color: rgb(32, 200, 0);
+      border: 1px solid;
+      color: rgb(32, 300, 0);
       font-size: 20px;
       border-radius: 5px;
       margin-top: 40px;
@@ -61,26 +58,31 @@
       display: flex;
       margin-left: auto;
       margin-right: auto;
+      font-family: 'Quicksand';
     }
     textarea:focus {
-        border: 3px solid rgb(32, 200, 0);
+        border: 3px solid rgb(32, 300, 0);
         outline: none;
     }
     #popupone {
             display: none;
             width: 250px;
-            height: 180px;
-            position: fixed;
+            height: 200px;
+            justify-content: center;
             padding: 10px;
-            border: 3px solid green;
+            margin: auto;
+            margin-top: 23%;
+            border: 3px solid rgb(32, 300, 0);
             background-color: black;
-            color: white;
+            color: rgb(32, 300, 0);
             text-align: center;
         }
-
         #popupone.show {
             display: block;
         } 
+        #popupone.hide{
+            display: none;
+        }
     </style>
 
     <!-- =========================================== The global css ended =================================== -->
@@ -92,7 +94,7 @@
       display: grid;
       grid-template-columns: repeat(3, 70px);
       grid-template-rows: repeat(3, 35px);
-      gap: 5px;
+      gap: 13px;
       justify-content: center;
       align-items: flex-start;
       background-color: black;
@@ -103,14 +105,16 @@
 
     .buttonone {
       width: 70px;
-      height: 35px;
+      height: 40px;
       text-align: center;
       line-height: 35px;
-      background-color: #4CAF50;
-      color: #ffffff;
-      border: none;
+      background-color: black;
+      color: rgb(32, 300, 0);
+      border: 2.5px solid rgb(32, 200, 0);
       cursor: pointer;
       border-radius: 5px;
+      padding-top: 0px;
+      padding-bottom: 10px;
     }
 
 
@@ -174,6 +178,8 @@
   <button id="buttononeh" class="buttonone">H</button>
   <button id="buttononei" class="buttonone">I</button>
   <button id="buttononej" class="buttonone">J</button>
+  <button id="buttononek" class="buttonone">K</button>
+  <button id="buttononel" class="buttonone">L</button>
 </div>
 
     </div>
@@ -256,6 +262,7 @@
             if (!popup.contains(event.target) && event.target !== toggleButton) {
                 popup.classList.remove('show');
             }
+            
         });
     </script>
 
@@ -301,6 +308,14 @@
     });
   });
 </script>
+
+
+
+
+
+
+
+
 
 <!-- global js code for fetching data from details.txt -->
 
